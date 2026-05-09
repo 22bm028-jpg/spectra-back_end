@@ -1,10 +1,10 @@
 services:
   - type: web
-    name: spectra-digitizer-api
+    name: spectra-back_end
     env: python
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --workers 2 --timeout 120
+    startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11.0"
-    healthCheckPath: /health
+        value: 3.11.9
